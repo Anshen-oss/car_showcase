@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { Hero, SearchBar, CustomFilter, CardCard } from '@/components'
+import { Hero, SearchBar, CustomFilter, CarCard } from '@/components'
 import { fetchCars } from '@/utils';
 
 
@@ -33,7 +33,7 @@ export default async function Home() {
         {!isDataEmpty ? (
           <section>
             <div className="home__cars-wrapper">
-              {allCars.map((car) => (<CardCard car={car} />))}
+              {allCars.map((car) => (<CarCard car={car} />))}
             </div>
           </section>
         ) : (

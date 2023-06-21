@@ -13,7 +13,7 @@ interface CarCardprops {
   car: CarProps;
 }
 
-const CardCard = ({ car }: CarCardprops) => {
+const CarCard = ({ car }: CarCardprops) => {
   const { city_mpg, year, make, model, transmission, drive } = car;
 
   const [isOpen, setIsOpen] = useState(false);
@@ -77,9 +77,13 @@ const CardCard = ({ car }: CarCardprops) => {
         </div>
       </div>
 
-      <CarDetails />
+      <CarDetails
+        isOpen={isOpen}
+        closeModal={() => setIsOpen(false)}
+        car={car}
+      />
     </div>
   )
 }
 
-export default CardCard;
+export default CarCard;
