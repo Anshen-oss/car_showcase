@@ -46,6 +46,7 @@ export default function Home() {
   }, [fuel, year, limit, manufacturer, model]);
 
   return (
+    return <GoogleAnalytics gaId="G-WDD1Q5SL7C" />
     <main className="overflow-hidden">
       <Hero />
 
