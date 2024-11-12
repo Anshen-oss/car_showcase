@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Hero, SearchBar, CustomFilter, CarCard, ShowMore } from '@/components'
 import { fetchCars } from '@/utils';
 import { fuels, yearsOfProduction } from '@/constants';
-
+import Script from 'next/script';
 import Image from 'next/image';
 
 export default function Home() {
@@ -46,7 +46,20 @@ export default function Home() {
   }, [fuel, year, limit, manufacturer, model]);
 
   return (
-    return <GoogleAnalytics gaId="G-WDD1Q5SL7C" />
+  <>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XXXXXXXXXX');
+        `}
+      </Script>
+         </>
     <main className="overflow-hidden">
       <Hero />
 
