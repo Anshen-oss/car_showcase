@@ -1,5 +1,6 @@
 import { Navbar, Footer } from '@/components'
 import './globals.css'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata = {
   title: 'Cars Showcase',
@@ -13,16 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WDD1Q5SL7C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-WDD1Q5SL7C');
-</script>
+ 
       <body className="relative">
+         return <GoogleAnalytics gaId="G-WDD1Q5SL7C" />
         <Navbar />
         {children}
         <Footer />
